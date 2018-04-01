@@ -1,8 +1,9 @@
 version: '3'
+
 services:
     webscraper-service:
-          build: ./app
-          volumes:
-            - ./app:/usr/src/app
-          ports:
-            - 5000:80
+        build: ./app
+        volumes:
+          - ./app:/usr/src/app
+        ports:
+          - 5000:80
