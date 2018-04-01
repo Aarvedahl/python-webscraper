@@ -1,10 +1,15 @@
 from flask import Flask
+import requests
 
 app = Flask(__name__)
 
 
+# Make a site to show recent posts from both instagram and twitter from a user with a username
+
 @app.route('/')
 def hello():
+    r = requests.get('https://github.com/timeline.json')
+    print(r.json())
     return 'Hello World! Here you will be able to view the top news'
 
 
