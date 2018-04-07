@@ -1,22 +1,16 @@
 package io.github.aarvedahl.twitternewsintegration.controller;
 
-import twitter4j.*;
+
+import io.github.aarvedahl.twitternewsintegration.dto.Status;
+import org.springframework.web.client.RestTemplate;
 
 public class TwitterController {
+    RestTemplate template;
 
-    public void searchTweets(String string) {
-        try {
-            Twitter twitter = TwitterFactory.getSingleton();
-            // Query query = new Query(string);
-            Query query = new Query("source:twitter4j yusukey");
-            QueryResult result = twitter.search(query);
-            for (Status status : result.getTweets()) {
-                System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public Status searchTweets(String searchTweets) {
+        // Set the correct header
+        template  = new RestTemplate();
+        Status status = template.getForObject("https://api.twitter.com/1.1/search/tweets.json?q=nasa&result_type=popular", Status.class);
+        return status;
     }
-
-
 }
