@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TwitterController {
 
-    
+
     public List<Status> searchTweets(String searchTweets) {
         List<Status> list = new LinkedList<>();
         Twitter twitter = TwitterFactory.getSingleton();
@@ -24,6 +24,8 @@ public class TwitterController {
         }
         return list;
     }
+
+
 
 
 }
