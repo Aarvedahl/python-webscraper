@@ -1,6 +1,6 @@
 package io.github.aarvedahl.twitternewsintegration.dto;
 
-public class Status extends AbstractUser {
+public class TwitterStatus extends AbstractUser {
 
     private String created_at;
     private String text;
@@ -18,9 +18,9 @@ public class Status extends AbstractUser {
 
     public void setText(String text) { this.text = text; }
 
-    public Status(String text) {
+    public TwitterStatus(String text) {
         this.text = text;
     }
 
-    public Status() {    }
+    public TwitterStatus() {    }
 }
