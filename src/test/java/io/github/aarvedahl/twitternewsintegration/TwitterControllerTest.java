@@ -6,14 +6,12 @@ import org.junit.Test;
 import twitter4j.Status;
 
 import java.util.List;
-import org.junit.Assert;
 
 import static junit.framework.TestCase.assertEquals;
 
 public class TwitterControllerTest {
 
     TwitterController twitterController;
-    private Object IndexOutOfBoundsException;
 
     @Before
     public void init() {
@@ -32,9 +30,6 @@ public class TwitterControllerTest {
         List<Status> list = twitterController.searchTweets("aaaalexasd");
         String status = list.get(0).getText();
     }
-
-
-
 
 
 }
