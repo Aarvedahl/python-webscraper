@@ -21,15 +21,24 @@ public class TwitterControllerTest {
 
     @Test
     public void searchRealTweets() {
-        List<Status> list = twitterController.searchTweets("20180414 testing");
-        assertEquals("20180414 testing", list.get(1).getText());
+        List<Status> list = twitterController.searchTweets("aarvedahl twitter4j");
+        assertEquals("Twitter4j Testing 1 2 3", list.get(1).getText());
     }
 
+    // Change so we add a status if there was no search result and with that, perhaps map all objects from twitter4j status to twitterstatus so we dont send a lot of dumb information
     @Test(expected = java.lang.IndexOutOfBoundsException.class)
     public void searchNotExisting() {
-        List<Status> list = twitterController.searchTweets("aaaalexasd");
+        List<Status> list = twitterController.searchTweets("aarvedahl aaaalexasd");
         String status = list.get(0).getText();
     }
+
+    @Test
+    public void getUserTimeline() {
+        List<Status> list = twitterController.getUserTimeLine("AArvedahl");
+        assertEquals("Twitter4j Testing 1 2 3", list.get(2).getText());
+    }
+
+
 
 
 }
