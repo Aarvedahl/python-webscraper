@@ -2,6 +2,8 @@ package io.github.aarvedahl.twitternewsintegration.controller;
 
 
 
+import io.github.aarvedahl.twitternewsintegration.dto.TwitterStatus;
+import io.github.aarvedahl.twitternewsintegration.dto.TwitterUser;
 import twitter4j.*;
 
 import java.util.ArrayList;
@@ -51,8 +53,6 @@ public class TwitterController {
         }
 
     }
-
-
 
 
 
